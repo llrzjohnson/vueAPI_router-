@@ -25,23 +25,7 @@ export default {
   data() {
     return {
       newUser: {},
-      users: [
-        {
-          name: "John Doe",
-          email: "jdoe@email.com",
-          contacted: false
-        },
-        {
-          name: "Jane Smith",
-          email: "janeSm@email.com",
-          contacted: true
-        },
-        {
-          name: "Mark Joe",
-          email: "Mjoe@email.com",
-          contacted: false
-        }
-      ]
+      users: []
     };
   },
   methods: {
@@ -56,6 +40,13 @@ export default {
     deleteUser: function(user) {
       this.users.splice(this.users.indexOf(user), 1);
     }
+  },
+  created: function() {
+    this.$http
+      .get("http://jsonplaceholder.typicode.com/users")
+      .then(function(response) {
+        this.users = response.data;
+      });
   }
 };
 </script>
