@@ -1,19 +1,24 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <h1>THIS IS THE MAIN JS</h1>
+    <test msg="Hello"></test>
   </div>
 </template>
 
 <script>
+import Test from "./components/test";
+
 export default {
-  name: 'App'
-}
+  name: "app",
+  components: {
+    Test
+  }
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

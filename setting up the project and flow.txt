@@ -1,0 +1,13 @@
+Recommended way to build Vue.js apps
+
+$npm install -g vue-cli // install vue-cli globally
+
+$vue init webpack myapp // create a new project with webpack
+
+$cd myapp
+
+$npm install // Install dependencies
+
+$npm run dev // Run dev server
+
+$npm run build // Build application for production
